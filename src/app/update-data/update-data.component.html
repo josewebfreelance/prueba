@@ -10,25 +10,21 @@
       <small>ticket <span class="badge badge-info">{{formulario.title}}</span></small>
     </h1>
 
-    <form>
-      <input type="hidden" name="id" [ngModel]="formulario.id">
+    <form (ngSubmit)="updateData(formulario)">
+      <input type="hidden" name="id" [(ngModel)]="formulario.id">
       <mat-form-field>
-        <input matInput placeholder="Titulo" name="title" maxlength="80" [ngModel]="formulario.title"/>
+        <input matInput placeholder="Titulo" name="title" maxlength="80" [(ngModel)]="formulario.title"/>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Descripcion" name="description" maxlength="80" [ngModel]="formulario.description"/>
+        <input matInput placeholder="Descripcion" name="description" maxlength="80" [(ngModel)]="formulario.description"/>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="" name="topic" maxlength="80" [ngModel]="formulario.topic"/>
+        <input matInput placeholder="" name="topic" maxlength="80" [(ngModel)]="formulario.topic"/>
       </mat-form-field>
 
-      <mat-form-field>
-        <input matInput placeholder="" name="createdAt" maxlength="80" [ngModel]="formulario.createdAt"/>
-      </mat-form-field>
-
-      <button mat-raised-button color="primary" type="submit" (click)="updateData(formulario)">Guardar</button>
+      <button mat-raised-button color="primary" type="submit">Guardar</button>
     </form>
   </div>
 </div>

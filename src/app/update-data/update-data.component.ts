@@ -15,7 +15,6 @@ export class UpdateDataComponent implements OnInit {
     title: '',
     description: '',
     topic: '',
-    createdAt: ''
   };
   id: any;
 
@@ -27,23 +26,22 @@ export class UpdateDataComponent implements OnInit {
   ngOnInit() {
     this.id = parseInt(this.rout.snapshot.paramMap.get('id'), 10);
     console.log(this.id)
-    this.getTicket()
+    this.getTicket();
   }
 
   getTicket() {
     this.updateDataService.getTicket(this.id).then(ticket => {
-      let {data} = ticket;
+      const { data } = ticket;
       this.formulario.id = data.id;
       this.formulario.title = data.title;
       this.formulario.description = data.description;
       this.formulario.topic = data.topic;
-      this.formulario.createdAt = data.created_at;
     });
   }
 
   updateData(data) {
     this.updateDataService.updateTicket(data);
-    console.log(data)
+    console.log(JSON.parse(JSON.stringify(data)));
   }
 
 }

@@ -4,4 +4,5 @@ export class Ticket {
   description: string;
   topic: string;
   created_at: string;
+  note: string;
 }
