@@ -1,0 +1,44 @@
+<div class="data-view vivify fadeIn data-screen">
+  <h1>Tickets Creados</h1>
+
+  <table class="mat-elevation-z1" mat-table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let item">{{item.id}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>Titulo</th>
+      <td mat-cell *matCellDef="let item">{{item.title}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Descripcion</th>
+      <td mat-cell *matCellDef="let item">{{item.description}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="created_at">
+      <th mat-header-cell *matHeaderCellDef>Creacion</th>
+      <td mat-cell *matCellDef="let item">{{item.created_at}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Acciones</th>
+      <td mat-cell *matCellDef="let item">
+
+        <button class="update" mat-icon-button routerLink="/update-ticket/{{item.id}}">
+          <mat-icon>edit</mat-icon>
+        </button>
+
+        <button class="delete" mat-icon-button>
+          <mat-icon>delete</mat-icon>
+        </button>
+
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

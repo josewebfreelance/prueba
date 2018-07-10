@@ -1,0 +1,34 @@
+<div class="vivify fadeIn">
+  <button mat-icon-button routerLink="/tickets">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+    Regresar
+  </button>
+
+  <div class="offset-1 col-lg-10 update-screen vivify popIn delay-450">
+    <h1>Actualizar</h1>
+    <h1>
+      <small>ticket <span class="badge badge-info">{{formulario.title}}</span></small>
+    </h1>
+
+    <form>
+      <input type="hidden" name="id" [ngModel]="formulario.id">
+      <mat-form-field>
+        <input matInput placeholder="Titulo" name="title" maxlength="80" [ngModel]="formulario.title"/>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Descripcion" name="description" maxlength="80" [ngModel]="formulario.description"/>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="" name="topic" maxlength="80" [ngModel]="formulario.topic"/>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="" name="createdAt" maxlength="80" [ngModel]="formulario.createdAt"/>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" (click)="updateData(formulario)">Guardar</button>
+    </form>
+  </div>
+</div>

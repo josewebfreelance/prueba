@@ -1,0 +1,15 @@
+form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.update-screen {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 40px;
+
+  .badge {
+    border-radius: 100px;
+  }
+}
